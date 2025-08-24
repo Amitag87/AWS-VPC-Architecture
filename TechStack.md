@@ -1,47 +1,50 @@
-Overview
+#Overview
 This infrastructure is defined and provisioned using Infrastructure as Code (IaC) principles, ensuring consistent, version-controlled, and repeatable environment deployments.
 
-Core Technologies
+#Core Technologies
+
 Cloud Provider
+
 Amazon Web Services (AWS) - Primary cloud infrastructure provider
 
 Infrastructure as Code
 HashiCorp Terraform (~> 1.0) - Infrastructure provisioning and management
 
-AWS Services Architecture
-Networking
-AWS VPC (Virtual Private Cloud) - Isolated network environment
+#AWS Services Architecture
+#Networking
+1)AWS VPC (Virtual Private Cloud) - Isolated network environment
 
-Internet Gateway (IGW) - Provides internet access to resources within the VPC
+2)Internet Gateway (IGW) - Provides internet access to resources within the VPC
 
-NAT Gateway - Allows private subnets to access the internet while remaining secure
+3)NAT Gateway - Allows private subnets to access the internet while remaining secure
 
-Compute
-EC2 Auto Scaling Groups - Automatically scales EC2 instances based on demand
+4)Compute
+->EC2 Auto Scaling Groups - Automatically scales EC2 instances based on demand
 
-EC2 Launch Templates - Defines instance configuration for auto-scaling
+->EC2 Launch Templates - Defines instance configuration for auto-scaling
 
-Load Balancing & Distribution
+5)Load Balancing & Distribution
 Application Load Balancer (ALB) - Distributes incoming application traffic across multiple targets
 
-Security
+6)Security
 Security Groups - Virtual firewalls controlling inbound and outbound traffic
 
-Configuration Management
+7)Configuration Management
 User Data Scripts - Instance bootstrapping and initial configuration (Assumed)
 
-Architecture Benefits
-Scalability: Auto-scaling ensures resources match demand
+#Architecture Benefits
 
-High Availability: Distributed across availability zones
+1)Scalability: Auto-scaling ensures resources match demand
 
-Security: Network isolation and security groups protect resources
+2)High Availability: Distributed across availability zones
 
-Cost Optimization: Pay only for resources actually consumed
+3)Security: Network isolation and security groups protect resources
 
-Reproducibility: Infrastructure defined as code for consistent environments
+4)Cost Optimization: Pay only for resources actually consumed
 
-Deployment Workflow
+5)Reproducibility: Infrastructure defined as code for consistent environments
+
+#Deployment Workflow
 Terraform configuration defines desired infrastructure state
 
 Terraform plan validates changes
